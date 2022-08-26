@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const helmet = require("helmet");
 const cors = require("cors");
 
-const { dbUri } = require("./config");
+const { dbUri, port } = require("./config");
 const apiRoutes = require("./components/componentRoutes");
 
 const app = express();
@@ -25,6 +25,6 @@ app.get("*", (_req, res) => {
   });
 });
 
-app.listen(4040, () => {
+app.listen(port, () => {
   console.log("Server is up on http://localhost:4040");
 });
